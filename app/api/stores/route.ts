@@ -41,6 +41,8 @@ export const POST = async (req: Request) => {
       updatedAt: serverTimestamp(),
     });
 
+    // The updateDoc section completes the document data by adding the ID and update time, ensuring the document has all the necessary information for future operations and queries.
+
     return NextResponse.json({ id, ...storeData });
   } catch (error) {
     console.log(`STORES_POST:${error}`);
